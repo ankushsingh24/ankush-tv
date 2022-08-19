@@ -36,7 +36,16 @@ function App() {
   function getSearchHandler(text) {
     setSearchText(text);
   }
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Left
+        getSearch={getSearchHandler}
+        wishlist={wishlist}
+        removeWish={removeWishHandler}
+        type={type}
+      />
+    </div>
+  );
 }
 
 export default App;
