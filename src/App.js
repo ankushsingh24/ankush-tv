@@ -44,6 +44,12 @@ function App() {
         removeWish={removeWishHandler}
         type={type}
       />
+
+      <Right
+        wishlist={wishlist}
+        removeWish={removeWishHandler}
+        getSearch={getSearchHandler}
+      />
     </div>
   );
 }
