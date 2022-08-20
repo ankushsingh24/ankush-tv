@@ -6,9 +6,9 @@ import axios from "../components/Axios/Axios";
 import Card from "../components/Middle/Card";
 import Spinner from "../components/Spinner/Spinner";
 
-const CategoryPage = () => {
+const CategoryPage = ({ setFav, wishlist }) => {
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPage] = useState(0);
+  const [totalPage, setTotalPage] = useState(0);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const params = useParams();
