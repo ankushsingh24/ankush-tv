@@ -15,7 +15,7 @@ const CategoryPage = ({ setFav, wishlist }) => {
   const cName = params.category;
   const type = params.type;
 
-  async function getGenre() {
+  async function getGenre(type) {
     setLoading(true);
     const res = await axios.get(
       `/genre/${type}/list?api_key=4a0eac3b6692e4c56952182a8412654a&language=en-US`
@@ -45,7 +45,7 @@ const CategoryPage = ({ setFav, wishlist }) => {
       getData();
     }
     outer();
-  }, [page, cName, type]);
+  }, [cName, page, type]);
 
   return (
     <div className="category">
@@ -58,9 +58,10 @@ const CategoryPage = ({ setFav, wishlist }) => {
             Movies
           </NavLink>
         </div>
+
         <div>
           <NavLink
-            to={`/${cName}/movie`}
+            to={`/${cName}/tv`}
             className={(navdata) => (navdata.isActive ? "active" : "link")}
           >
             TV Series
