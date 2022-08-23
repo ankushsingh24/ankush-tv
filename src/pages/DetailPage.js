@@ -19,45 +19,45 @@ const DetailPage = ({ setFav }) => {
   const type = params.type;
 
   useEffect(() => {
+    async function getData() {
+      setLoading(true);
+      const res = await Axios.get(
+        `/${type}/${dataId}?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
+      );
+
+      setDetail(res.data);
+      setGenres(res.data.genres);
+      setLoading(false);
+    }
+
+    async function getCasts() {
+      setLoading(true);
+      const res = await Axios.get(
+        `/${type}/${dataId}/credits?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
+      );
+
+      setCasts(res.data.cast.slice(1, 15));
+      setLoading(false);
+    }
+
+    async function getTrailer() {
+      setLoading(true);
+      const res = Axios.get(
+        `/${type}/${dataId}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
+      );
+
+      setTrailer(
+        res.data.results.filter(
+          (mov) => mov.name === "Official Trailer" || mov.type === "Trailer"
+        )[0].key
+      );
+      setLoading(false);
+    }
+
     getData();
     getCasts();
     getTrailer();
   }, [dataId, type]);
-
-  async function getData() {
-    setLoading(true);
-    const res = await Axios.get(
-      `/${type}/${dataId}?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
-    );
-
-    setDetail(res.data);
-    setGenres(res.data.genres);
-    setLoading(false);
-  }
-
-  async function getCasts() {
-    setLoading(true);
-    const res = await Axios.get(
-      `/${type}/${dataId}/credits?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
-    );
-
-    setCasts(res.data.cast.slice(1, 15));
-    setLoading(false);
-  }
-
-  async function getTrailer() {
-    setLoading(true);
-    const res = Axios.get(
-      `/${type}/${dataId}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
-    );
-
-    setTrailer(
-      res.data.results.filter(
-        (mov) => mov.name === "Official Trailer" || mov.type === "Trailer"
-      )[0].key
-    );
-    setLoading(false);
-  }
 
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
