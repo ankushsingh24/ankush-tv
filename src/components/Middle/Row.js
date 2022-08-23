@@ -1,8 +1,8 @@
 import React from "react";
 import { settings } from "./Settings";
-import { Slider } from "react-slick";
-import uuid from "uuid";
-import { Card } from "./Card";
+import Slider from "react-slick";
+import uuid from "react-uuid";
+import Card from "./Card";
 
 const Row = ({ heading, data, setFav, type, wishlist }) => {
   return (
