@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import { BsPlusLg } from "react-icons/bs";
 import Slider from "react-slick";
-import uuid from "/react-uuid";
+import uuid from "react-uuid";
 import Axios from "../components/Axios/Axios";
 import { settingsTwo } from "../components/Middle/Settings";
 import Spinner from "../components/Spinner/Spinner";
