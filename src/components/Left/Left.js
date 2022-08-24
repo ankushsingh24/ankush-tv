@@ -51,7 +51,7 @@ const Left = ({ getSearch, wishlist, removeWish, type }) => {
               Home
             </NavLink>
           </div>
-          {catArr.map((cat) => () => (
+          {catArr.map((cat) => (
             <div key={uuid()}>
               <NavLink
                 to={`/${cat}/movie`}
