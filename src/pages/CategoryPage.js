@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
-import axios from "../components/Axios/Axios";
+import axios from "../components/axios/axios";
 import Card from "../components/Middle/Card";
 import Spinner from "../components/Spinner/Spinner";
 import "./CategoryPage.css";
