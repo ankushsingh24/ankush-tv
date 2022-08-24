@@ -5,6 +5,8 @@ import { RiMovieFill } from "react-icons/ri";
 import { BsFillHeartFill } from "react-icons/bs";
 import InputArea from "../Right/InputArea";
 import Favorites from "../Right/Favorites";
+import "./Left.css";
+import "../Middle/Middle.css";
 
 const Left = ({ getSearch, wishlist, removeWish, type }) => {
   const [showWishList, setShowWishList] = useState(false);
