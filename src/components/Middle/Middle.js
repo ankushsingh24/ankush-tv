@@ -4,8 +4,8 @@ import uuid from "react-uuid";
 import { NavLink } from "react-router-dom";
 import { ImCross } from "react-icons/im";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Axios from "../Axios/Axios";
-import Requests from "../Axios/Requests";
+import axios from "../axios/axios";
+import Requests from "../axios/Requests";
 import HomePage from "../../pages/HomePage";
 import CategoryPage from "../../pages/CategoryPage";
 import DetailPage from "../../pages/DetailPage";
@@ -38,7 +38,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
   async function temp() {
     async function getTrendingMovie() {
       setLoading(true);
-      const res = await Axios.get(Requests.fetchTrendingMovie);
+      const res = await axios.get(Requests.fetchTrendingMovie);
       setTrendingMovie(res.data.results);
       setLoading(false);
       return res.data.results;
@@ -47,7 +47,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
 
     async function getTopMovie() {
       setLoading(true);
-      const res = await Axios.get(Requests.fetchTopRatedMovie);
+      const res = await axios.get(Requests.fetchTopRatedMovie);
       setTopMovie(res.data.results);
       setLoading(false);
     }
@@ -55,7 +55,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
 
     async function getTrendingShow() {
       setLoading(true);
-      const res = await Axios.get(Requests.fetchTrendingShow);
+      const res = await axios.get(Requests.fetchTrendingShow);
       setTrendingShow(res.data.results);
       setLoading(false);
       return res.data.results;
@@ -64,7 +64,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
 
     async function getTopShow() {
       setLoading(true);
-      const res = await Axios.get(Requests.fetchTopRatedShow);
+      const res = await axios.get(Requests.fetchTopRatedShow);
       setTopShow(res.data.results);
       setLoading(false);
     }
@@ -75,7 +75,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
       movieForBanner[Math.floor(Math.random() * movieForBanner.length - 1)]
     );
 
-    const showForBanner = await getTrendingMovie();
+    const showForBanner = await getTrendingShow();
     setBannerShow(
       showForBanner[Math.floor(Math.random() * showForBanner.length - 1)]
     );

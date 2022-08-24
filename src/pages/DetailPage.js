@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa";
 import { BsPlusLg } from "react-icons/bs";
 import Slider from "react-slick";
 import uuid from "react-uuid";
-import Axios from "../components/Axios/Axios";
+import axios from "../components/axios/axios";
 import { settingsTwo } from "../components/Middle/Settings";
 import Spinner from "../components/Spinner/Spinner";
 import "./DetailPage.css";
@@ -22,7 +22,7 @@ const DetailPage = ({ setFav }) => {
   useEffect(() => {
     async function getData() {
       setLoading(true);
-      const res = await Axios.get(
+      const res = await axios.get(
         `/${type}/${dataId}?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
       );
 
@@ -33,7 +33,7 @@ const DetailPage = ({ setFav }) => {
 
     async function getCasts() {
       setLoading(true);
-      const res = await Axios.get(
+      const res = await axios.get(
         `/${type}/${dataId}/credits?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
       );
 
@@ -43,12 +43,12 @@ const DetailPage = ({ setFav }) => {
 
     async function getTrailer() {
       setLoading(true);
-      const res = Axios.get(
+      const request = await axios.get(
         `/${type}/${dataId}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
       );
 
       setTrailer(
-        res.data.results.filter(
+        request.data.results.filter(
           (mov) => mov.name === "Official Trailer" || mov.type === "Trailer"
         )[0].key
       );
@@ -106,16 +106,14 @@ const DetailPage = ({ setFav }) => {
                     rel="noreferrer"
                   >
                     <button className="watch">
-                      <FaPlay />
-                      PLAY
+                      <FaPlay /> PLAY
                     </button>
                   </a>
                   <button
                     className="add"
                     onClick={() => setFav({ detail, type })}
                   >
-                    <BsPlusLg />
-                    <span>MY LIST</span>
+                    <BsPlusLg /> <span> MY LIST</span>
                   </button>
                 </div>
               </div>

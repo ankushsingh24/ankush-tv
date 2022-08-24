@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { GoAlert } from "react-icons/go";
 import uuid from "react-uuid";
-import API_KEY from "../components/Axios/Requests";
+import API_KEY from "../components/axios/Requests";
 import Card from "../components/Middle/Card";
 import Spinner from "../components/Spinner/Spinner";
-import Axios from "../components/Axios/Axios";
+import axios from "../components/axios/axios";
 import "./SearchPage.css";
 
 const SearchPage = ({ searchText, setFav, wishlist }) => {
@@ -20,7 +20,7 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
     async function getData() {
       try {
         setLoading(true);
-        const data = await Axios.get(
+        const { data } = await axios.get(
           `https://api.themoviedb.org/3/search/${params.type}?api_key=${API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
         );
 
@@ -28,7 +28,7 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
         setLoading(false);
         setTotalPage(data.total_pages);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
 
@@ -82,7 +82,7 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
                 <div className="alert">
                   <GoAlert />
                 </div>
-                <div>Not Found</div>
+                <div> Not Found!</div>
               </div>
             )}
           </div>
