@@ -1,0 +1,107 @@
+.head {
+  display: flex;
+  align-items: center;
+}
+.iconH {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  margin-bottom: 14px;
+  color: rgb(167, 5, 5);
+  position: relative;
+}
+.num {
+  position: absolute;
+  top: 0px;
+  left: 22px;
+  padding: 1px 5px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+.favorites {
+  width: 100%;
+  overflow-y: scroll;
+}
+.favorites h2 {
+  margin-bottom: 1.5rem;
+}
+.fav-card {
+  display: flex;
+  margin-bottom: 1.6rem;
+}
+.fav-card img {
+  height: 4.5rem;
+  width: 4rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.details {
+  width: 50%;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.name-side {
+  font-size: 0.8rem;
+}
+.genre {
+  color: rgb(170, 168, 168);
+}
+.imdb {
+  background-color: yellow;
+  color: black;
+  font-weight: 500;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+.ratings-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.point {
+  margin-left: 5px;
+}
+.delete {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.delete :hover {
+  color: white;
+}
+
+@media (max-width: 1250px) {
+  .details {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 1000px) {
+  .favorites {
+    overflow-y: visible;
+  }
+}
+@media (max-width: 500px) {
+  .iconH {
+    font-size: 1.5rem;
+  }
+  .num {
+    font-size: 0.5rem;
+    padding: 1px 4px;
+  }
+  .fav-card img {
+    height: 3.5rem;
+    width: 3rem;
+  }
+  .details {
+    font-size: 0.6rem;
+  }
+}
