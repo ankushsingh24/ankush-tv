@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 import { BsPlusLg } from "react-icons/bs";
-import Axios from "../Axios/Axios";
+import axios from "../axios/axios";
 import { AiFillStar } from "react-icons/ai";
 import "./Middle.css";
 
@@ -10,7 +10,7 @@ const Banner = ({ banner, setFav }) => {
   const type = banner.media_type;
   useEffect(() => {
     async function getVideo() {
-      const request = await Axios.get(
+      const request = await axios.get(
         `/${type}/${banner.id}/videos?api_key=0c44ec8e26aea5702eb3cb2e20f8938d`
       );
 
@@ -28,7 +28,7 @@ const Banner = ({ banner, setFav }) => {
   }, [banner.id, movieTrailer, type]);
 
   function truncate(string, n) {
-    return string.length > n ? string.substr(0, n - 1) + "..." : string;
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
 
   return (
