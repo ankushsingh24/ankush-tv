@@ -6,7 +6,7 @@ import Right from "./components/Right/Right";
 
 function App() {
   const [type, setType] = useState("");
-  const [wishlist, setWishList] = useState(
+  const [wishlist, setWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist")) || []
   );
   const [searchText, setSearchText] = useState("");
@@ -19,17 +19,17 @@ function App() {
   // ===================Set as favorite=======================
   function setFav({ mov, type }) {
     console.log(mov, type);
-    const alreadyWishListed = wishlist.find((wish) => wish.mov.id === mov.id);
-    if (alreadyWishListed) return;
+    const alreadyWishlisted = wishlist.find((wish) => wish.mov.id === mov.id);
+    if (alreadyWishlisted) return;
     const temp = [{ mov, type }, ...wishlist];
-    setWishList(temp);
+    setWishlist(temp);
     saveToLocalStorage(temp);
-    setType(temp);
+    setType(type);
   }
   // ======================Remove from favorite====================
   const removeWishHandler = (id) => {
     const temp = wishlist.filter((tmp) => tmp.mov.id !== id);
-    setWishList(temp);
+    setWishlist(temp);
     saveToLocalStorage(temp);
   };
   // =====================Pass search value to middle component from right========================
@@ -50,6 +50,7 @@ function App() {
       <Right
         wishlist={wishlist}
         removeWish={removeWishHandler}
+        type={type}
         getSearch={getSearchHandler}
       />
     </div>
