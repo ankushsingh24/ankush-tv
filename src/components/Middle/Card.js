@@ -8,15 +8,17 @@ const Card = ({ mov, setFav, type, wishlist }) => {
   const [red, setRed] = useState(false);
 
   useEffect(() => {
-    if (wishlist.find((wish) => wish.mod.id === mov.id)) {
+    if (wishlist.find((wish) => wish.mov.id === mov.id)) {
       setRed(true);
     } else {
       setRed(false);
     }
   }, [wishlist, mov.id]);
-
-  function setAsFavourite() {
-    setFav({ mov, type });
+  function setAsFavorite() {
+    setFav({
+      mov,
+      type,
+    });
   }
 
   return (
@@ -35,13 +37,18 @@ const Card = ({ mov, setFav, type, wishlist }) => {
         )}
       </Link>
       <div className="card-content">
-        <div className={red ? "newPlus" : "plus"} onClick={setAsFavourite}>
+        <div className={red ? "newPlus" : "plus"} onClick={setAsFavorite}>
           <BsPlusLg />
         </div>
         <div className="info">
           <div className="card-name">{mov.title || mov.name}</div>
           <div className="card-rating">
-            <AiFillStar style={{ color: "yellow", marginRight: "5px" }} />
+            <AiFillStar
+              style={{
+                color: "yellow",
+                marginRight: "5px",
+              }}
+            />
             <div>{mov.vote_average}</div>
           </div>
         </div>
