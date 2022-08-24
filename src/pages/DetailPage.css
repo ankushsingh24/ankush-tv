@@ -1,0 +1,157 @@
+.detailPage {
+  position: relative;
+  height: 70vh;
+}
+.layout {
+  position: absolute;
+  /* bottom: 0; */
+  width: 100%;
+  display: flex;
+  padding: 8rem 5rem;
+  z-index: 11;
+}
+.fadeBottom {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  height: 70vh;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(17, 17, 17, 0.8),
+    #111
+  );
+}
+.detailsIn {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.detailsIn div {
+  margin-top: 10px;
+}
+.image img {
+  height: 19rem;
+  width: 15rem;
+}
+.title {
+  font-size: 2.5rem;
+}
+.genres {
+  display: flex;
+}
+.genres div {
+  border: 2px solid rgb(131, 130, 130);
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 5px;
+}
+.tagLine {
+  font-size: 1.1rem;
+}
+.genres {
+  font-weight: bold;
+}
+.descrip {
+  font-size: 0.95rem;
+}
+.imdbIn span {
+  background-color: yellow;
+  margin-right: 10px;
+  color: black;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.wrapperIn {
+  margin: 1rem 3rem;
+}
+.wrapperIn h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgb(95, 92, 92);
+}
+.cast img {
+  height: 9rem;
+  margin: auto;
+  border-radius: 1rem;
+}
+.noImage {
+  width: 6.5rem;
+}
+.about {
+  margin-top: 7px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgb(183, 181, 181);
+}
+.character {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1350px) {
+  .layout {
+    padding: 4rem 0.5rem;
+  }
+}
+@media (max-width: 1200px) {
+  .title {
+    font-size: 2rem;
+  }
+  .detailsIn div {
+    font-size: 13px;
+  }
+  .character {
+    font-size: 0.7rem;
+  }
+  .about {
+    font-size: 0.6rem;
+  }
+  .cast img {
+    height: 8rem;
+  }
+  .image img {
+    height: 16rem;
+    width: 12rem;
+  }
+}
+@media (max-width: 500px) {
+  .detailPage {
+    height: 57vh;
+  }
+  .image img {
+    height: 13rem;
+    width: 8rem;
+  }
+  .detailsIn {
+    width: 55vw;
+    margin-left: 1rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .detailsIn div {
+    font-size: 10px;
+  }
+  .wrapperIn {
+    margin: 0rem 2rem;
+  }
+  .wrapperIn h2 {
+    font-size: 1.1rem;
+  }
+  .cast img {
+    height: 6rem;
+  }
+  .noImage {
+    width: 4.2rem;
+  }
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
