@@ -6,7 +6,7 @@ const Right = ({ wishlist, removeWish, type, getSearch }) => {
   return (
     <div className="right">
       <InputArea getSearch={getSearch} />
-      <Favorites wishlist={wishlist} removeWish={removeWish} />
+      <Favorites wishlist={wishlist} removeWish={removeWish} type={type} />
     </div>
   );
 };
