@@ -1,0 +1,28 @@
+.searchPage {
+  margin: 2.3rem 1.5rem;
+}
+.notFound {
+  height: 80vh;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notFound div {
+  margin: 10px;
+}
+.alert {
+  color: yellow;
+}
+
+@media (max-width: 1000px) {
+  .searchPage {
+    margin: -1rem 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .searchPage {
+    margin: 0;
+    margin-top: 3rem;
+  }
+}
