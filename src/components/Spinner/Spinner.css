@@ -1,0 +1,9 @@
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+.spinnerImage {
+  width: 4rem;
+}
