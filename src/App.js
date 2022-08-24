@@ -45,6 +45,8 @@ function App() {
         type={type}
       />
 
+      <Middle setFav={setFav} searchText={searchText} wishlist={wishlist} />
+
       <Right
         wishlist={wishlist}
         removeWish={removeWishHandler}
