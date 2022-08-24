@@ -3,6 +3,7 @@ import uuid from "react-uuid";
 import { Link } from "react-router-dom";
 import { BsFillHeartFill } from "react-icons/bs";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+import "./Favorites.css";
 
 const Favorites = ({ wishlist, removeWish }) => {
   return (

@@ -5,6 +5,7 @@ import uuid from "react-uuid";
 import axios from "../components/Axios/Axios";
 import Card from "../components/Middle/Card";
 import Spinner from "../components/Spinner/Spinner";
+import "./CategoryPage.css";
 
 const CategoryPage = ({ setFav, wishlist }) => {
   const [page, setPage] = useState(1);

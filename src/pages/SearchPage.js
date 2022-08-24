@@ -7,6 +7,7 @@ import API_KEY from "../components/Axios/Requests";
 import Card from "../components/Middle/Card";
 import Spinner from "../components/Spinner/Spinner";
 import Axios from "../components/Axios/Axios";
+import "./SearchPage.css";
 
 const SearchPage = ({ searchText, setFav, wishlist }) => {
   const [content, setContent] = useState([]);

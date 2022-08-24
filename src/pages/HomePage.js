@@ -3,6 +3,8 @@ import Banner from "../components/Middle/Banner";
 import Row from "../components/Middle/Row";
 import { NavLink } from "react-router-dom";
 import Spinner from "../components/Spinner/Spinner";
+import "../components/Middle/Middle.css";
+import "../components/Middle/Row.css";
 
 const HomePage = ({
   top,

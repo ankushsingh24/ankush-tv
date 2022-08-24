@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
+import "./Row.css";
 
 const Card = ({ mov, setFav, type, wishlist }) => {
   const [red, setRed] = useState(false);

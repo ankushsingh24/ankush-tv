@@ -3,6 +3,7 @@ import { settings } from "./Settings";
 import Slider from "react-slick";
 import uuid from "react-uuid";
 import Card from "./Card";
+import "./Row.css";
 
 const Row = ({ heading, data, setFav, type, wishlist }) => {
   return (

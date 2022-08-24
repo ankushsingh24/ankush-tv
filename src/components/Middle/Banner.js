@@ -3,6 +3,7 @@ import { FaPlay } from "react-icons/fa";
 import { BsPlusLg } from "react-icons/bs";
 import Axios from "../Axios/Axios";
 import { AiFillStar } from "react-icons/ai";
+import "./Middle.css";
 
 const Banner = ({ banner, setFav }) => {
   const [movieTrailer, setMovieTrailer] = useState([]);

@@ -7,6 +7,7 @@ import uuid from "react-uuid";
 import Axios from "../components/Axios/Axios";
 import { settingsTwo } from "../components/Middle/Settings";
 import Spinner from "../components/Spinner/Spinner";
+import "./DetailPage.css";
 
 const DetailPage = ({ setFav }) => {
   const [detail, setDetail] = useState({});
