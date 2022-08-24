@@ -5,7 +5,7 @@ import { BsFillHeartFill } from "react-icons/bs";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import "./Favorites.css";
 
-const Favorites = ({ wishlist, removeWish }) => {
+const Favorites = ({ wishlist, removeWish, type }) => {
   return (
     <div className="favorites">
       <div className="head">
@@ -16,12 +16,12 @@ const Favorites = ({ wishlist, removeWish }) => {
         </div>
       </div>
       <div className="favorites-wrapper">
-        {wishlist.map((wish) => () => (
+        {wishlist.map((wish) => (
           <div className="fav-card" key={uuid()}>
             <Link to={`/detailPage/${wish.mov.id}/${wish.type}`}>
               {wish.mov.poster_path ? (
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${wish.mov.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/original/${wish.mov.poster_path}`}
                   alt="side"
                 />
               ) : (
@@ -40,7 +40,7 @@ const Favorites = ({ wishlist, removeWish }) => {
               <div className="ratings">
                 <div className="ratings-in">
                   <div className="imdb">IMDb</div>
-                  <div className="point">{wish.mov.vote.average}</div>
+                  <div className="point">{wish.mov.vote_average}</div>
                 </div>
                 <div className="delete" onClick={() => removeWish(wish.mov.id)}>
                   <IoIosRemoveCircleOutline style={{ color: "white" }} />
