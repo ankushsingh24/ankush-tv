@@ -18,7 +18,7 @@ function App() {
 
   // ===================Set as favorite=======================
   function setFav({ mov, type }) {
-    console.log(mov, type);
+    // console.log(mov, type);
     const alreadyWishlisted = wishlist.find((wish) => wish.mov.id === mov.id);
     if (alreadyWishlisted) return;
     const temp = [{ mov, type }, ...wishlist];
