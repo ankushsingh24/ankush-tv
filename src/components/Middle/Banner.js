@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
-import { BsPlusLg } from "react-icons/bs";
+// import { BsPlusLg } from "react-icons/bs";
 import axios from "../axios/axios";
 import { AiFillStar } from "react-icons/ai";
 import "./Middle.css";
@@ -11,7 +11,7 @@ const Banner = ({ banner, setFav }) => {
   useEffect(() => {
     async function getVideo() {
       const request = await axios.get(
-        `/${type}/${banner.id}/videos?api_key=2b08d6e34027bd2aa1f78d7d275c340d`
+        `/${type}/${banner.id}/videos?api_key=0c44ec8e26aea5702eb3cb2e20f8938d`
       );
 
       setMovieTrailer(
@@ -24,7 +24,7 @@ const Banner = ({ banner, setFav }) => {
       );
     }
     getVideo();
-    return movieTrailer;
+    // return movieTrailer;
   }, [banner.id, movieTrailer, type]);
 
   function truncate(string, n) {
@@ -61,9 +61,9 @@ const Banner = ({ banner, setFav }) => {
                 <FaPlay /> <span> PLAY</span>
               </a>
             </button>
-            <button className="add" onClick={() => setFav({ banner, type })}>
+            {/* <button className="add" onClick={() => setFav({ banner, type })}>
               <BsPlusLg /> <span> MY LIST</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
