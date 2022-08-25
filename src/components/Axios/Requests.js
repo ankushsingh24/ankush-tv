@@ -1,6 +1,4 @@
-export const API_KEY = "0c44ec8e26aea5702eb3cb2e20f8938d";
-// 26ba5e77849587dbd7df199727859189
-// 4a0eac3b6692e4c56952182a8412654a
+export const API_KEY = "2b08d6e34027bd2aa1f78d7d275c340d";
 
 const requests = {
   fetchTrendingMovie: `/trending/movie/week?api_key=${API_KEY}`,
