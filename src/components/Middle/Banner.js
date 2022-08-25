@@ -11,7 +11,7 @@ const Banner = ({ banner, setFav }) => {
   useEffect(() => {
     async function getVideo() {
       const request = await axios.get(
-        `/${type}/${banner.id}/videos?api_key=0c44ec8e26aea5702eb3cb2e20f8938d`
+        `/${type}/${banner.id}/videos?api_key=2b08d6e34027bd2aa1f78d7d275c340d`
       );
 
       setMovieTrailer(
