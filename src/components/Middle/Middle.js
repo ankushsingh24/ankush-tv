@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { ImCross } from "react-icons/im";
 import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "../axios/axios";
-import Requests from "../axios/Requests";
+import requests from "../axios/Requests";
 import HomePage from "../../pages/HomePage";
 import CategoryPage from "../../pages/CategoryPage";
 import DetailPage from "../../pages/DetailPage";
@@ -38,7 +38,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
   async function temp() {
     async function getTrendingMovie() {
       setLoading(true);
-      const res = await axios.get(Requests.fetchTrendingMovie);
+      const res = await axios.get(requests.fetchTrendingMovie);
       setTrendingMovie(res.data.results);
       setLoading(false);
       return res.data.results;
@@ -47,7 +47,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
 
     async function getTopMovie() {
       setLoading(true);
-      const res = await axios.get(Requests.fetchTopRatedMovie);
+      const res = await axios.get(requests.fetchTopRatedMovie);
       setTopMovie(res.data.results);
       setLoading(false);
     }
@@ -55,7 +55,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
 
     async function getTrendingShow() {
       setLoading(true);
-      const res = await axios.get(Requests.fetchTrendingShow);
+      const res = await axios.get(requests.fetchTrendingShow);
       setTrendingShow(res.data.results);
       setLoading(false);
       return res.data.results;
@@ -64,7 +64,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
 
     async function getTopShow() {
       setLoading(true);
-      const res = await axios.get(Requests.fetchTopRatedShow);
+      const res = await axios.get(requests.fetchTopRatedShow);
       setTopShow(res.data.results);
       setLoading(false);
     }
