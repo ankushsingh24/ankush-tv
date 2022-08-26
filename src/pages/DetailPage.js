@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
-import { BsPlusLg } from "react-icons/bs";
+// import { BsPlusLg } from "react-icons/bs";
 import Slider from "react-slick";
 import uuid from "react-uuid";
 import axios from "../components/axios/axios";
@@ -109,12 +109,12 @@ const DetailPage = ({ setFav }) => {
                       <FaPlay /> PLAY
                     </button>
                   </a>
-                  <button
+                  {/* <button
                     className="add"
                     onClick={() => setFav({ detail, type })}
                   >
                     <BsPlusLg /> <span> MY LIST</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
